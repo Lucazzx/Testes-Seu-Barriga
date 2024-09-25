@@ -9,15 +9,24 @@ import static core.DriverFactory.getDriver;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import pages.LoginPage;
+
 public class BaseTeste {
+	private LoginPage page = new LoginPage();
 	
 	@Rule
 	public TestName testName = new TestName();
+	
+	@Before
+	public void buildUp () {
+		page.logar("lucassousa@email.com", "123");
+	}
 
     @After
     public void tearDown() throws IOException{
