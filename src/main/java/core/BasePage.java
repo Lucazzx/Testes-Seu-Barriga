@@ -36,6 +36,10 @@ public class BasePage {
 	    	return getDriver().findElement(By.tagName(tag)).getText();
 	    }
 	    
+	    public String obterTextoXPath (String xPath) {
+	    	return getDriver().findElement(By.xpath(xPath)).getText();
+	    }
+	    
 	    public void clicar(String id) {
 	    	getDriver().findElement(By.id(id)).click();
 	    }
