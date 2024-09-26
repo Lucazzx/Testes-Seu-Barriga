@@ -56,6 +56,12 @@ public class BasePage {
 	    	return getDriver().findElement(By.id(id)).isSelected();
 	    }
 	    
+	    public List<WebElement> buscaElementoXPath(String xPath) {
+	        List<WebElement> elementos = getDriver().findElements(By.xpath(xPath));
+	        return elementos;
+	    }
+
+	    
 	    public void selecionarCombo(String id, String[] esportes) {
 	        WebElement element = getDriver().findElement(By.id(id));
 	        Select combo = new Select(element);
