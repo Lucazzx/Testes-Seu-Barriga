@@ -1,6 +1,8 @@
 package pages;
 
 import java.util.List;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import org.openqa.selenium.WebElement;
 
@@ -69,5 +71,11 @@ public class MovimentacaoPage extends BasePage {
 
 	    return texto;
 	}
+	
+    public String getDataAtualFormatada() {
+        LocalDate dataAtual = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return dataAtual.format(formatter);
+    }
 	
 }
