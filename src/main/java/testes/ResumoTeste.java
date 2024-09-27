@@ -1,5 +1,6 @@
 package testes;
 
+import static core.DriverFactory.getDriver;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -18,6 +19,12 @@ public class ResumoTeste extends BaseTeste{
 		menuPage.acessarTelaResumo();
 		resumoPage.clicarExcluirPrimeiraMovimentacao();
 		assertEquals("Movimentação removida com sucesso!", resumoPage.obterMensagemSucesso());
+	}
+	
+	@Test
+	public void testeResumoMensal() {
+		menuPage.acessarTelaResumo();
+		assertEquals("Seu Barriga - Extrato", getDriver().getTitle());
 	}
 
 }
