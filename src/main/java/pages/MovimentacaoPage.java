@@ -70,8 +70,4 @@ public class MovimentacaoPage extends BasePage {
 	    return texto;
 	}
 	
-	public void clicarSalvar() {
-		clicarPorXpath("//button[.='Salvar']");
-	}
-
 }

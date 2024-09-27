@@ -186,5 +186,17 @@ public class BasePage {
 			WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(segundos));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xPath)));
 		}
+		
+		public void clicarSalvar() {
+			clicarPorXpath("//button[.='Salvar']");
+		}
+		
+		public String obterMensagemSucesso() {
+			return obterTextoXPath("//div[@class='alert alert-success']");
+		}
+		
+		public String obterMensagemFalha() {
+			return obterTextoXPath("//div[@class='alert alert-danger']");
+		}
 
 }
