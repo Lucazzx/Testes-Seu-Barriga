@@ -28,4 +28,7 @@ public class LoginPage extends BasePage {
 		clickEntrar();
 	}
 
+	public void clickReset() {
+		clicarLink("reset");
+	}
 }

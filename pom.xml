@@ -1,4 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<properties>
+<configuration-encoding>UTF-8</configuration-encoding>
+</properties>
+
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.lucassousa</groupId>
   <artifactId>ProjetoBasico</artifactId>
@@ -13,7 +17,7 @@
   			<version>2.18.1</version>
   			<configuration>
   				<includes>
-  					<include>com/lucassousa/suites/*.java</include>
+  					<include>suites/*.java</include>
   				</includes>
   				<parallel>all</parallel>
   				<threadCount>3</threadCount>

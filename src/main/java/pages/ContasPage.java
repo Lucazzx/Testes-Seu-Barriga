@@ -11,12 +11,12 @@ public class ContasPage extends BasePage {
 	}
 	
 	public void clicarAlterarConta(String conta) {
-		obterCelula("Conta", conta, "Ações", "tabelaContas").findElement(By.xpath(".//span[@class='glyphicon glyphicon-edit']")).click();
+		obterCelula("Conta", conta, "AÃ§Ãµes", "tabelaContas").findElement(By.xpath(".//span[@class='glyphicon glyphicon-edit']")).click();
 		
 	}
 	
 	public void clicarExcluirConta(String conta) {
-		obterCelula("Conta", conta, "Ações", "tabelaContas").findElement(By.xpath(".//span[@class='glyphicon glyphicon-remove-circle']")).click();
+		obterCelula("Conta", conta, "AÃ§Ãµes", "tabelaContas").findElement(By.xpath(".//span[@class='glyphicon glyphicon-remove-circle']")).click();
 		
 	}
 

@@ -17,7 +17,7 @@ public class ContaTeste extends BaseTeste {
 	@Test
 	public void testeInserirConta () {
 		menuPage.acessarTelaInserirConta();
-		contasPage.setNome("ContaTesteLucas2");
+		contasPage.setNome("ContaTesteInserirConta");
 		contasPage.clicarSalvar();
 		assertEquals("Conta adicionada com sucesso!", contasPage.obterMensagemSucesso());
 	}
@@ -25,8 +25,8 @@ public class ContaTeste extends BaseTeste {
 	@Test
 	public void testeAlterarConta () {
 		menuPage.acessarTelaAlterarConta();
-		contasPage.clicarAlterarConta("ContaTesteLucas2");
-		contasPage.setNome("ContaTesteLucas2-Alterada");
+		contasPage.clicarAlterarConta("Conta para alterar");
+		contasPage.setNome("Conta alterada");
 		contasPage.clicarSalvar();
 		assertEquals("Conta alterada com sucesso!", contasPage.obterMensagemSucesso());
 	}
@@ -34,16 +34,16 @@ public class ContaTeste extends BaseTeste {
 	@Test
 	public void testeInserirContaMesmoNome () {
 		menuPage.acessarTelaInserirConta();
-		contasPage.setNome("ContaTesteLucas2-Alterada");
+		contasPage.setNome("Conta mesmo nome");
 		contasPage.clicarSalvar();
-		assertEquals("Já existe uma conta com esse nome!", contasPage.obterMensagemFalha());
+		assertEquals("JÃ¡ existe uma conta com esse nome!", contasPage.obterMensagemFalha());
 	}
 	
 	@Test
 	public void testeExcluirContaComMovimentacao () {
 		menuPage.acessarTelaAlterarConta();
-		contasPage.clicarExcluirConta("ContaTesteLucas2");
-		assertEquals("Conta em uso na movimentações", contasPage.obterMensagemFalha());
+		contasPage.clicarExcluirConta("Conta com movimentacao");
+		assertEquals("Conta em uso na movimentaÃ§Ãµes", contasPage.obterMensagemFalha());
 	}
 	
 }

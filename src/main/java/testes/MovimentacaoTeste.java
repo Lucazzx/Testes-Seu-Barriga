@@ -43,34 +43,35 @@ public class MovimentacaoTeste extends BaseTeste {
     public static Collection<Object[]> getCollection(){
     	MovimentacaoPage movimentacaoPage = new MovimentacaoPage();
     	String dataAtual = movimentacaoPage.getDataAtualFormatada();
-    	return Arrays.asList(new Object[][]{
+        return Arrays.asList(new Object[][]{
             {new String[]{""}, "", "", "", "", "", new String[]{""}, new String[]{""},
-            "Data da MovimentaÁ„o È obrigatÛrio"},
-        {new String[]{""}, "DataInvalida", "", "", "", "", new String[]{""}, new String[]{""},
-            "Data da MovimentaÁ„o inv·lida (DD/MM/YYYY)"},
-        {new String[]{""}, "20/09/2099", "", "", "", "", new String[]{""}, new String[]{""},
-            "Data da MovimentaÁ„o deve ser menor ou igual ‡ data atual"},
-        {new String[]{""}, dataAtual, "", "", "", "", new String[]{""}, new String[]{""},
-            "Data do pagamento È obrigatÛrio"},
-        {new String[]{""}, dataAtual, "DataInvalida", "", "", "", new String[]{""}, new String[]{""},
-            "Data do pagamento inv·lida (DD/MM/YYYY)"},
-        {new String[]{""}, dataAtual, dataAtual, "", "", "", new String[]{""}, new String[]{""},
-            "DescriÁ„o È obrigatÛrio"},
-        {new String[]{""}, dataAtual, dataAtual, "DescriÁ„oExemplo", "", "", new String[]{""}, new String[]{""},
-            "Interessado È obrigatÛrio"},
-        {new String[]{""}, dataAtual, dataAtual, "DescriÁ„oExemplo", "InteressadoExemplo", "", new String[]{""}, new String[]{""},
-            "Valor È obrigatÛrio"},
-        {new String[]{""}, dataAtual, dataAtual, "DescriÁ„oExemplo", "InteressadoExemplo", "TesteValor", new String[]{""}, new String[]{""},
-            "Valor deve ser um n˙mero"},
-        {new String[]{""}, dataAtual, dataAtual, "DescriÁ„oExemplo", "InteressadoExemplo", "500.25", new String[]{""}, new String[]{""},
-            "MovimentaÁ„o adicionada com sucesso!"},
-        {new String[]{"Despesa"}, dataAtual, dataAtual, "DescriÁ„oExemplo", "InteressadoExemplo", "500.25", new String[]{""}, new String[]{""},
-            "MovimentaÁ„o adicionada com sucesso!"},
-        {new String[]{"Despesa"}, dataAtual, dataAtual, "DescriÁ„oExemplo", "InteressadoExemplo", "500.25", new String[]{"ContaTesteLucas2-Alterada"}, new String[]{""},
-            "MovimentaÁ„o adicionada com sucesso!"},
-        {new String[]{"Despesa"}, dataAtual, dataAtual, "DescriÁ„oExemplo", "InteressadoExemplo", "500.25", new String[]{"ContaTesteLucas2-Alterada"}, new String[]{"Pago"},
-            "MovimentaÁ„o adicionada com sucesso!"}
-    	});
+            "Data da Movimenta√ß√£o √© obrigat√≥rio"},
+            {new String[]{""}, "DataInvalida", "", "", "", "", new String[]{""}, new String[]{""},
+            "Data da Movimenta√ß√£o inv√°lida (DD/MM/YYYY)"},
+            {new String[]{""}, "20/09/2099", "", "", "", "", new String[]{""}, new String[]{""},
+            "Data da Movimenta√ß√£o deve ser menor ou igual √† data atual"},
+            {new String[]{""}, dataAtual, "", "", "", "", new String[]{""}, new String[]{""},
+            "Data do pagamento √© obrigat√≥rio"},
+            {new String[]{""}, dataAtual, "DataInvalida", "", "", "", new String[]{""}, new String[]{""},
+            "Data do pagamento inv√°lida (DD/MM/YYYY)"},
+            {new String[]{""}, dataAtual, dataAtual, "", "", "", new String[]{""}, new String[]{""},
+            "Descri√ß√£o √© obrigat√≥rio"},
+            {new String[]{""}, dataAtual, dataAtual, "Descri√ß√£oExemplo", "", "", new String[]{""}, new String[]{""},
+            "Interessado √© obrigat√≥rio"},
+            {new String[]{""}, dataAtual, dataAtual, "Descri√ß√£oExemplo", "InteressadoExemplo", "", new String[]{""}, new String[]{""},
+            "Valor √© obrigat√≥rio"},
+            {new String[]{""}, dataAtual, dataAtual, "Descri√ß√£oExemplo", "InteressadoExemplo", "TesteValor", new String[]{""}, new String[]{""},
+            "Valor deve ser um n√∫mero"},
+            {new String[]{""}, dataAtual, dataAtual, "Descri√ß√£oExemplo", "InteressadoExemplo", "500.25", new String[]{""}, new String[]{""},
+            "Movimenta√ß√£o adicionada com sucesso!"},
+            {new String[]{"Despesa"}, dataAtual, dataAtual, "Descri√ß√£oExemplo", "InteressadoExemplo", "500.25", new String[]{""}, new String[]{""},
+            "Movimenta√ß√£o adicionada com sucesso!"},
+            {new String[]{"Despesa"}, dataAtual, dataAtual, "Descri√ß√£oExemplo", "InteressadoExemplo", "500.25", new String[]{"ContaTesteLucas2-Alterada"}, new String[]{""},
+            "Movimenta√ß√£o adicionada com sucesso!"},
+            {new String[]{"Despesa"}, dataAtual, dataAtual, "Descri√ß√£oExemplo", "InteressadoExemplo", "500.25", new String[]{"ContaTesteLucas2-Alterada"}, new String[]{"Pago"},
+            "Movimenta√ß√£o adicionada com sucesso!"}
+        });
+
     }
 	
 	@Test
@@ -85,8 +86,8 @@ public class MovimentacaoTeste extends BaseTeste {
 		movimentacaoPage.setDescricao(descricao);
 		movimentacaoPage.setInteressado(interessado);
 		movimentacaoPage.setValor(valor);
-		if (conta[0].equals("ContaTesteLucas2")) movimentacaoPage.setConta("ContaTesteLucas2");
-		if (conta[0].equals("ContaTesteLucas2-Alterada")) movimentacaoPage.setConta("ContaTesteLucas2-Alterada");
+		if (conta[0].equals("ContaTesteLucas2")) movimentacaoPage.setConta("Conta para movimentacoes");
+		if (conta[0].equals("ContaTesteLucas2-Alterada")) movimentacaoPage.setConta("Conta para movimentacoes");
 		if (situacao[0].equals("Pago")) movimentacaoPage.setSituacaoPago();
 		if (situacao[0].equals("Pendente")) movimentacaoPage.setSituacaoPendente();
 		movimentacaoPage.clicarSalvar();	

@@ -19,7 +19,7 @@ public class MenuPage extends BasePage {
 	}
 	
 	public void acessarTelaCriarMovimentacao(){
-		clicarLink("Criar Movimentação");
+		clicarLink("Criar MovimentaÃ§Ã£o");
 	}
 	
 	public void acessarTelaResumo(){

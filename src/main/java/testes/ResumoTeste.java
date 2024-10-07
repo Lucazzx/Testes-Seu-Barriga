@@ -1,11 +1,15 @@
 package testes;
 
-import static core.DriverFactory.getDriver;
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import core.BaseTeste;
+import core.DriverFactory;
 import pages.MenuPage;
 import pages.ResumoPage;
 
@@ -18,13 +22,18 @@ public class ResumoTeste extends BaseTeste{
 	public void testeExcluirMovimentacao() {
 		menuPage.acessarTelaResumo();
 		resumoPage.clicarExcluirPrimeiraMovimentacao();
-		assertEquals("Movimentação removida com sucesso!", resumoPage.obterMensagemSucesso());
+		assertEquals("MovimentaÃ§Ã£o removida com sucesso!", resumoPage.obterMensagemSucesso());
 	}
 	
 	@Test
 	public void testeResumoMensal() {
 		menuPage.acessarTelaResumo();
-		assertEquals("Seu Barriga - Extrato", getDriver().getTitle());
+		resumoPage.selecionarAno("2020");
+		resumoPage.clicarBuscar();
+		
+		List<WebElement> elementosEncontrados = 
+				DriverFactory.getDriver().findElements(By.xpath("//*[@id='tabelaExtrato']/tbody/tr"));
+		assertEquals(0, elementosEncontrados.size());
 	}
 
 }
