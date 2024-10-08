@@ -16,9 +16,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import pages.LoginPage;
+import pages.MenuPage;
 
 public class BaseTeste {
 	private LoginPage page = new LoginPage();
+	private MenuPage menuPage = new MenuPage();
 	
 	@Rule
 	public TestName testName = new TestName();
@@ -34,9 +36,14 @@ public class BaseTeste {
     	File arquivo = ss.getScreenshotAs(OutputType.FILE);
     	FileUtils.copyFile(arquivo, new File("target"+ File.separator +"screenshots"+ File.separator + testName.getMethodName()+ ".jpg"));
     	
+    	menuPage.acessarHome();
+    	page.clickReset();
+    	
 		if(Propriedades.FECHAR_BROWSER) {
 			killDriver();
 		}
     	
     }
+    
+    
 }
